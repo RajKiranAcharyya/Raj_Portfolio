@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Raj Kiran Acharyya – Full-Stack Developer Intern</title>
+<meta name="description" content="Live full-stack projects by Raj Kiran Acharyya, mapped to the Software Development Engineer Intern job description: Node.js, TypeScript, Next.js, Tailwind CSS, API design and docs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<!-- Edit only the PROJECTS and LINKS objects at the bottom. Values starting with ADD_ show as "coming soon". Keep only what you really built. -->
+<style>
+:root{--bg:#F1F4F9;--card:#fff;--ink:#0F172A;--muted:#55607A;--line:#D2D9E6;--accent:#1F4FE0;--accent-ink:#fff;--hit:#FFE45C;--hit-ink:#2A2200;--code:#0F172A;--code-ink:#DCE6FF;--off:#8792A8;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0C1220;--card:#151D30;--ink:#E7ECF7;--muted:#9BA6BE;--line:#27324D;--accent:#86A6FF;--accent-ink:#0C1220;--code:#0A0F1C;--off:#6A7590;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0C1220;--card:#151D30;--ink:#E7ECF7;--muted:#9BA6BE;--line:#27324D;--accent:#86A6FF;--accent-ink:#0C1220;--code:#0A0F1C;--off:#6A7590;color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 "Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;line-height:1.1;margin:0;letter-spacing:-.015em}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:20px;align-items:center;min-height:56px;overflow-x:auto;white-space:nowrap}
+nav strong{font-family:"Bricolage Grotesque",sans-serif;margin-right:auto}
+nav a{text-decoration:none;color:var(--muted);font-weight:600;font-size:15px}
+nav a:hover{color:var(--ink)}
+.btn{display:inline-block;padding:10px 18px;border-radius:8px;font:600 16px "Source Sans 3",sans-serif;text-decoration:none;border:2px solid var(--accent);color:var(--accent);background:transparent;cursor:pointer}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.btn.off{border-color:var(--off);color:var(--off);pointer-events:none}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.hero{padding:60px 0 34px;display:grid;gap:40px;grid-template-columns:1.1fr 1fr;align-items:center}
+.hero h1{font-size:clamp(38px,6.4vw,68px);font-weight:800}
+.lead{font-size:19px;color:var(--muted);max-width:33em;margin:18px 0 26px}
+.facts{display:flex;flex-wrap:wrap;gap:8px 22px;margin:26px 0 0;padding:0;list-style:none;color:var(--muted);font-size:15px}
+.facts b{color:var(--ink)}
+.jdbox{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.jdbox h2{font-size:21px}
+.jdbox p{margin:6px 0 14px;color:var(--muted);font-size:15px}
+.jdlist{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.jdlist button{font:600 15px "Source Sans 3",sans-serif;border:1.5px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:6px 14px 6px 10px;cursor:pointer;display:flex;gap:7px;align-items:center;opacity:0;animation:tick .35s ease forwards}
+.jdlist button::before{content:"✓";display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--hit);color:var(--hit-ink);font-size:12px}
+.jdlist button[aria-pressed="true"]{background:var(--hit);color:var(--hit-ink);border-color:var(--hit)}
+.jdlist button[aria-pressed="true"]::before{background:var(--hit-ink);color:var(--hit)}
+@keyframes tick{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.jdlist button{animation:none;opacity:1}html{scroll-behavior:auto}}
+.status{min-height:26px;margin:14px 0 0;font-size:15px;color:var(--muted)}
+section{padding:42px 0}
+h2.sec{font-size:clamp(28px,4vw,38px);margin-bottom:8px}
+.sub{color:var(--muted);margin:0 0 26px;max-width:44em}
+.project{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px;margin-bottom:22px;transition:opacity .2s}
+.project.feature{border:2px solid var(--accent)}
+.project.dim{opacity:.38}
+.project h3{font-size:27px}
+.tag{display:block;color:var(--muted);font-weight:600;font-size:15px;margin:4px 0 12px}
+.cols{display:grid;gap:26px;grid-template-columns:1fr 1fr}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0;padding:0;list-style:none}
+.chips li{font-size:14px;border:1px solid var(--line);border-radius:999px;padding:2px 11px;color:var(--muted)}
+.chips li.jd{background:var(--hit);color:var(--hit-ink);border-color:transparent;font-weight:600}
+.chips li.sel{outline:3px solid var(--accent);outline-offset:1px}
+.pts{margin:0 0 18px;padding-left:20px}.pts li{margin-bottom:6px}
+.flow{display:flex;flex-wrap:wrap;gap:6px;align-items:stretch;margin:6px 0 4px;padding:0;list-style:none;counter-reset:s}
+.flow li{counter-increment:s;flex:1 1 90px;border:1.5px solid var(--line);border-radius:8px;padding:8px 10px;font-size:14px;line-height:1.3}
+.flow li::before{content:counter(s);display:block;font:500 12px "IBM Plex Mono",monospace;color:var(--accent);margin-bottom:2px}
+.flow small{display:block;color:var(--muted);font-size:12.5px;margin-top:2px}
+.cap{font-size:14px;color:var(--muted);margin:0 0 14px}
+.code{background:var(--code);color:var(--code-ink);border-radius:10px;padding:14px 16px;font:400 13.5px/1.55 "IBM Plex Mono",ui-monospace,monospace;overflow-x:auto;white-space:pre;margin:0 0 6px}
+.code b{color:#FFE45C;font-weight:500}
+.matrixwrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:14px}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:15px}
+th,td{padding:10px 14px;text-align:center;border-bottom:1px solid var(--line)}
+th:first-child,td:first-child{text-align:left;font-weight:600}
+thead th{font-family:"Bricolage Grotesque",sans-serif;font-size:15px}
+tr:last-child td{border-bottom:0}
+td.y::after{content:"●";color:var(--accent)}
+tr.hl td:first-child{background:var(--hit);color:var(--hit-ink)}
+.xp{border-left:3px solid var(--line);padding:0 0 0 20px;margin-bottom:24px}
+.xp h3{font-size:20px}.xp .meta{color:var(--muted);font-size:15px;margin:2px 0 6px}.xp p{margin:0}
+footer{padding:44px 0 60px;border-top:1px solid var(--line)}
+footer h2{font-size:30px;margin-bottom:10px}footer p{margin:6px 0}
+@media (max-width:860px){.hero,.cols{grid-template-columns:1fr}.hero{padding-top:36px}}
+</style>
+</head>
+<body>
+<nav aria-label="Sections"><div class="wrap">
+<strong>Raj Kiran Acharyya</strong><a href="#projects">Projects</a><a href="#match">Skill match</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
+</div></nav>
+
+<main>
+<header class="wrap hero">
+<div>
+<h1>Full-stack developer. Backend first, built around your job description.</h1>
+<p class="lead">I’m a B.Tech CSE student applying for the Software Development Engineer Intern role. Every skill you list is on the right: select one to see which of my live projects use it.</p>
+<div class="btns"><a class="btn primary" href="#projects">See live projects</a><a class="btn" data-link="resume" href="#">Resume</a><a class="btn" data-link="github" href="#">GitHub</a></div>
+<ul class="facts"><li><b>8.9</b> CGPA, expected 2027</li><li><b>99%</b> NPTEL Java, IIT Kharagpur</li><li><b>2</b> internships</li><li><b>1</b> hackathon</li></ul>
+</div>
+<aside class="jdbox" aria-labelledby="jt">
+<h2 id="jt">Your required skills</h2>
+<p>Select a skill to filter my projects.</p>
+<ul class="jdlist" id="jdlist"></ul>
+<div class="status" id="status" role="status" aria-live="polite"></div>
+</aside>
+</header>
+
+<section id="projects"><div class="wrap">
+<h2 class="sec">Live projects</h2>
+<p class="sub">Two full-stack apps built for this role’s stack, plus my Spring Boot backend and a hackathon RAG app. The free hosting plan may put a backend to sleep, so the first load can take about a minute.</p>
+<div id="projectlist"></div>
+</div></section>
+
+<section id="match"><div class="wrap">
+<h2 class="sec">Skill match</h2>
+<p class="sub">Each required skill, and the projects where I used it. This table is built from the project data above.</p>
+<div class="matrixwrap"><table id="matrix"></table></div>
+</div></section>
+
+<section id="experience"><div class="wrap">
+<h2 class="sec">Experience</h2>
+<div class="xp"><h3>Junior Backend Development Intern, YuvaIntern</h3><p class="meta">5 weeks · <a data-link="yuvaCert" href="#">Certificate</a></p><p>Built the Appointment-Tracker backend: concurrency-safe booking, query optimisation, async and scheduled emails, and structured error handling.</p></div>
+<div class="xp"><h3>AICTE IBM EDUNET Internship</h3><p class="meta">4 weeks · <a data-link="aicteCert" href="#">Certificate</a> · <a data-link="aicteRepo" href="#">Source code</a></p><p>Built a FastAPI app that streams an AI-generated startup blueprint to a JavaScript frontend with Server-Sent Events, with PDF export.</p></div>
+<div class="xp"><h3>IEM HackOasis Hackathon</h3><p class="meta"><a data-link="hackCert" href="#">Certificate</a></p><p>Built InquiroAI, a document Q&amp;A app using retrieval-augmented generation.</p></div>
+</div></section>
+</main>
+
+<footer id="contact"><div class="wrap">
+<h2>Let’s talk</h2>
+<p>Open to the Software Development Engineer Intern role.</p>
+<p><a href="mailto:rajkiranacharyya@gmail.com">rajkiranacharyya@gmail.com</a> · +91-9474643821</p>
+<p><a data-link="github" href="#">GitHub</a> · <a data-link="linkedin" href="#">LinkedIn</a> · <a data-link="leetcode" href="#">LeetCode</a> · <a data-link="gfg" href="#">GeeksforGeeks</a></p>
+</div></footer>
+
+<script>
+var LINKS={
+resume:"ADD_RESUME_PDF_URL",
+github:"https://github.com/RajKiranAcharyya/",
+linkedin:"https://www.linkedin.com/in/raj-kiran-acharyya-b5b529316/",
+leetcode:"https://leetcode.com/u/rajkiranacharyya/",
+gfg:"https://www.geeksforgeeks.org/profile/rajkiranacharyya",
+mailcheckLive:"ADD_MAILCHECK_FRONTEND_URL",
+mailcheckDocs:"ADD_MAILCHECK_BACKEND_URL/docs",
+mailcheckRepo:"https://github.com/RajKiranAcharyya/mailcheck-email-verifier",
+outreachLive:"ADD_OUTREACHFLOW_FRONTEND_URL",
+outreachDocs:"ADD_OUTREACHFLOW_BACKEND_URL/docs",
+outreachRepo:"https://github.com/RajKiranAcharyya/outreachflow-ai-campaigns",
+trackerLive:"ADD_APPOINTMENT_TRACKER_URL/swagger-ui",
+trackerRepo:"https://github.com/RajKiranAcharyya/Appointment-Tracker",
+inquiroRepo:"https://github.com/RajKiranAcharyya/InquiroAI",
+aicteRepo:"https://github.com/RajKiranAcharyya/AICTE_IBM_EDUNET_INTERNSHIP_Startup_Blueprint_Generator",
+yuvaCert:"https://drive.google.com/file/d/1xX48EqpdL9EAF26r_sKgFZpy6WGHfWHY/view?usp=sharing",
+aicteCert:"https://drive.google.com/file/d/1kqlr9X5pZOgTkNW7YE-cWtFLpREDfAtq/view?usp=drive_link",
+hackCert:"https://drive.google.com/file/d/1ni0cSOBOtZus4_L-DLZs4_9yXRA1DeBC/view?usp=drive_link"
+};
+
+var JD=["Node.js","TypeScript","JavaScript","React.js","Next.js","Tailwind CSS","API design & docs","Git/GitHub","MySQL"];
+
+var PROJECTS=[
+{id:"mailcheck",name:"MailCheck",feature:true,tag:"Email verification tool · full stack",
+ blurb:"Paste emails or upload a CSV; every address is checked, scored and exportable.",
+ jd:["Node.js","TypeScript","JavaScript","React.js","Next.js","Tailwind CSS","API design & docs","Git/GitHub"],
+ more:["Express","SQLite (Knex)","Jest","Docker"],
+ pts:["Checks syntax, disposable domains, role-based addresses and MX records, then returns a score and a typo suggestion.","Runs bulk CSV jobs in the background with a live progress bar, and recovers jobs interrupted by a restart.","Caches domain lookups in memory and in the database to avoid repeated DNS calls; adds rate limiting and input validation.","Code-splits the results table and paginates from the API to keep the page fast."],
+ flow:[["Input","email or CSV"],["Syntax","format, length"],["Disposable","local list"],["Role-based","info@, admin@"],["MX lookup","cached 24 h"],["Score","valid / risky / invalid"]],
+ cap:"How one address is checked",
+ code:'<b>POST</b> /api/verify\n{ "email": "jane@gmial.com" }\n\n<b>200</b> (sample response)\n{ "status": "risky", "score": 70,\n  "reasons": ["possible_typo"],\n  "suggestion": "jane@gmail.com" }',
+ links:[["Live demo","mailcheckLive",1],["API docs","mailcheckDocs"],["Source code","mailcheckRepo"]]},
+{id:"outreachflow",name:"OutreachFlow",feature:true,tag:"AI cold-email campaign tool · full stack · sandbox sending only",
+ blurb:"Import contacts, build a multi-step sequence and track it on a dashboard. No real emails are sent.",
+ jd:["Node.js","TypeScript","JavaScript","React.js","Next.js","Tailwind CSS","API design & docs","Git/GitHub"],
+ more:["Express","SQLite (Knex)","Gemini API","Nodemailer","Jest","Docker"],
+ pts:["Sends through a database-backed queue with a background worker, retries with backoff, daily limits and a unique key that stops duplicate sends.","Generates a personalised opening line per contact with the Gemini API, with a timeout, a fallback and a basic prompt-injection guard.","Adds signed unsubscribe links, open tracking and token-protected API routes.","Code-splits the email log and sequence builder; documents every endpoint in Swagger."],
+ flow:[["Pending","due time reached"],["Sending","claimed by worker"],["Sent","next step queued"],["Failed","retry with backoff"],["Give up","after 3 attempts"]],
+ cap:"Life of one email in the queue",
+ code:'<b>GET</b> /api/campaigns/1/stats\n\n<b>200</b> (sample response)\n{ "pending": 8, "sent": 24, "failed": 1,\n  "skipped": 2, "opened": 9, "unsubscribed": 1 }',
+ links:[["Live demo","outreachLive",1],["API docs","outreachDocs"],["Source code","outreachRepo"]]},
+{id:"tracker",name:"Appointment-Tracker",tag:"Spring Boot backend · built during my YuvaIntern internship",
+ blurb:"Doctor, patient and appointment management with a concurrency-safe booking flow.",
+ jd:["MySQL","API design & docs","Git/GitHub"],
+ more:["Java","Spring Boot","JPA / Hibernate","Spring Mail"],
+ pts:["Stops double-booking with an application check plus a database unique constraint.","Fixes N+1 queries using @EntityGraph.","Sends async confirmation emails and scheduled daily reminders; returns structured 404, 409 and 400 errors."],
+ links:[["API docs","trackerLive"],["Source code","trackerRepo"]]},
+{id:"inquiro",name:"InquiroAI",tag:"Document Q&A with RAG · IEM HackOasis hackathon",
+ blurb:"Answers questions across PDF, DOCX and PPTX files, with source citations.",
+ jd:["Git/GitHub"],more:["Python","Streamlit","ChromaDB","Sentence Transformers","Gemini API"],
+ pts:["Cites PDF pages, slides, paragraphs and table rows.","Says clearly when the documents do not contain the answer."],
+ links:[["Source code","inquiroRepo"]]}
+];
+
+var sel=null;
+function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e}
+
+function wire(root){
+ root.querySelectorAll("[data-link]").forEach(function(a){
+  var u=LINKS[a.getAttribute("data-link")];
+  if(u&&u.indexOf("ADD_")!==0){a.href=u;a.target="_blank";a.rel="noopener noreferrer"}
+  else{a.removeAttribute("href");a.setAttribute("aria-disabled","true");a.classList.add("off");a.textContent=a.textContent.trim()+" (coming soon)"}
+ });
+}
+
+function renderProjects(){
+ var box=document.getElementById("projectlist");box.innerHTML="";
+ PROJECTS.forEach(function(p){
+  var a=el("article","project"+(p.feature?" feature":""));a.id=p.id;
+  var left="<h3>"+p.name+"</h3><span class='tag'>"+p.tag+"</span><p>"+p.blurb+"</p><ul class='chips'>"
+   +p.jd.map(function(s){return "<li class='jd'>"+s+"</li>"}).join("")+p.more.map(function(s){return "<li>"+s+"</li>"}).join("")
+   +"</ul><ul class='pts'>"+p.pts.map(function(s){return "<li>"+s+"</li>"}).join("")+"</ul><div class='btns'>"
+   +p.links.map(function(l){return "<a class='btn"+(l[2]?" primary":"")+"' data-link='"+l[1]+"' href='#'>"+l[0]+"</a>"}).join("")+"</div>";
+  var right=p.flow?"<p class='cap'>"+p.cap+"</p><ol class='flow'>"+p.flow.map(function(f){return "<li>"+f[0]+"<small>"+f[1]+"</small></li>"}).join("")+"</ol><pre class='code' tabindex='0'>"+p.code+"</pre>":"";
+  a.innerHTML=p.flow?"<div class='cols'><div>"+left+"</div><div>"+right+"</div></div>":left;
+  box.appendChild(a);
+ });
+ wire(box);
+}
+
+function renderMatrix(){
+ var t=document.getElementById("matrix");
+ var h="<thead><tr><th scope='col'>Required skill</th>"+PROJECTS.map(function(p){return "<th scope='col'>"+p.name+"</th>"}).join("")+"</tr></thead><tbody>";
+ JD.forEach(function(s){
+  h+="<tr data-skill='"+s+"'><td>"+s+"</td>"+PROJECTS.map(function(p){return p.jd.indexOf(s)>-1?"<td class='y' aria-label='used'></td>":"<td aria-label='not used'></td>"}).join("")+"</tr>";
+ });
+ t.innerHTML=h+"</tbody>";
+}
+
+function apply(){
+ var n=0;
+ PROJECTS.forEach(function(p){
+  var a=document.getElementById(p.id),on=!sel||p.jd.indexOf(sel)>-1;
+  a.classList.toggle("dim",!on);if(on)n++;
+  a.querySelectorAll(".chips li").forEach(function(c){c.classList.toggle("sel",!!sel&&c.textContent===sel)});
+ });
+ document.querySelectorAll("#matrix tr[data-skill]").forEach(function(r){r.classList.toggle("hl",r.getAttribute("data-skill")===sel)});
+ document.querySelectorAll("#jdlist button").forEach(function(b){b.setAttribute("aria-pressed",String(b.textContent===sel))});
+ document.getElementById("status").textContent=sel?(n+" of "+PROJECTS.length+" projects use "+sel+"."):"";
+}
+
+function renderJD(){
+ var ul=document.getElementById("jdlist");
+ JD.forEach(function(s,i){
+  var li=document.createElement("li"),b=document.createElement("button");
+  b.type="button";b.textContent=s;b.setAttribute("aria-pressed","false");b.style.animationDelay=(0.25+i*0.12)+"s";
+  b.onclick=function(){sel=(sel===s)?null:s;apply();if(sel)document.getElementById("projects").scrollIntoView({behavior:"smooth"})};
+  li.appendChild(b);ul.appendChild(li);
+ });
+}
+
+renderJD();renderProjects();renderMatrix();wire(document);apply();
+</script>
+</body>
+</html>
